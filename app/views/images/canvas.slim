@@ -1,0 +1,53 @@
+
+= attachment_image_tag @images.first, :image, :fill, 800, 300, format: 'png', class: "image"
+canvas#canvas
+
+/ .testobj
+javascript:
+  /* sample1 */
+  // var scene = new THREE.Scene();
+  // var camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
+  // var renderer = new THREE.WebGLRenderer();
+  // renderer.setSize( window.innerWidth, window.innerHeight );
+  // document.body.appendChild( renderer.domElement );
+
+  // var geometry = new THREE.CubeGeometry(1,1,1);
+  // var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+  // var cube = new THREE.Mesh( geometry, material );
+
+  // cube.rotation.x += 0.1;
+  // cube.rotation.y += 0.1;
+
+
+  // scene.add( cube );
+  // camera.position.z = 5;
+
+
+  // function render() {
+  //   requestAnimationFrame(render);
+  //   renderer.render(scene, camera);
+  // }
+  // render();
+
+
+  /* sample2 */
+  var image = document.getElementsByClassName(".image");
+
+  $(document).ready(function(){
+    var renderer = new THREE.WebGLRenderer({'canvas':$('#canvas')[0]});
+    var camera = new THREE.PerspectiveCamera();
+    camera.position.z = 500;
+
+    var material = new THREE.MeshBasicMaterial({
+       map:THREE.ImageUtils.loadTexture(image, {}, function() {renderer.render(scene, camera);
+       })
+    });
+
+        var geometry = new THREE.PlaneGeometry(200, 200);
+        var mesh = new THREE.Mesh(geometry, material);
+
+        var scene = new THREE.Scene();
+        scene.add(mesh);
+
+        renderer.render(scene, camera);
+  });

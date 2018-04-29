@@ -19,3 +19,4 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts
 # add js files
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javasctipts")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javasctipts", "js")
+Rails.application.config.assets.paths << Rails.root.join('node_modules')

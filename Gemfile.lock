@@ -83,6 +83,10 @@ GEM
     crass (1.0.3)
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
+    dotenv (2.4.0)
+    dotenv-rails (2.4.0)
+      dotenv (= 2.4.0)
+      railties (>= 3.2, < 6.0)
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.23)
@@ -253,6 +257,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   chunky_png
   coffee-rails
+  dotenv-rails
   hirb
   hirb-unicode
   html2slim

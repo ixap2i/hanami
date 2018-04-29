@@ -17,7 +17,9 @@ module Hanami
 
     config.generators.template_engine = :slim 
 
-    
+    Bundler.require(*Rails.groups)
+
+    Dotenv::Railtie.load
 
     # Do not generate asset files
     config.generators do |g|

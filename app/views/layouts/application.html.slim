@@ -35,6 +35,10 @@ html
     script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/jquery.gsap.min.js" 
     script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/PixiPlugin.min.js" 
 
-
-  = yield
-  = yield :head if content_for?(:foot)
+    script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.js"
+    script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.min.js"
+    / = render "partials/header"
+    / = render "partials/sidebar"
+    
+    = yield
+    = yield :head if content_for?(:foot)

@@ -76,6 +76,9 @@ gem "pry-nav"
 gem 'hirb'
 gem 'hirb-unicode'
 
+# .env
+gem 'dotenv-rails'
+
 # for font-face
 group :staging, :production do
   gem 'rails_12factor'

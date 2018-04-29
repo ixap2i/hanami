@@ -1,0 +1,12 @@
+header.o-header__top
+  - if controller.controller_name == "images" && controller.action_name == "slider"
+    | Photo Map
+    br
+    | 写真
+  - elsif controller.controller_name == "images" && controller.action_name == "index"
+    | Water Slider
+    br
+    | スライダー
+    br
+    - if @test
+     | "#{@test}"

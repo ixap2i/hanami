@@ -1,15 +1,8 @@
+/! Replace the value of the key parameter with your own API key.
+script async="" defer="" src="https://maps.googleapis.com/maps/api/js?language=ja&v=3.32&key=AIzaSyCb2tcvLbFGvlgnFTNMBczhBJsataGnlzw&callback=initMap" 
+
 .m-slider
-  section.data-scroll
-
-
-
-
-
-
-  section.data-scroll
-
-
-
-
-
-  section.data-scroll
+  = @images.each do |image|
+    section
+      = attachment_image_tag image, :image, :fill, 1000, 300, format: 'png', class: "img fadeIn"
+      .map

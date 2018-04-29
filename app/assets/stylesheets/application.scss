@@ -14,11 +14,15 @@
 *= require_self
 */
 
- 
+html {
+  padding: 40px;
+} 
 
-@font-face {
-  src: font-url('KanazawaFontMini.otf');
-  font-family: 'KanazawaFontMini';
+body {
+  color: white;
+  font-size: 14px;
+  font-family: 'KanazawaFontMini';   
+  
 }
 
 main {
@@ -43,4 +47,19 @@ main {
 
 .scene-nav--prev {
   left: 2%;
+}
+
+.map {
+  width: 100%;
+  height: 300px;
+} 
+
+.img {
+  margin: 0 auto;
+}
+
+.testobj {
+  height: 20px;
+  width: 20px;
+  background: rgb(129, 129, 235);
 }
