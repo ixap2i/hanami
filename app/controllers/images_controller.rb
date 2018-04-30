@@ -19,7 +19,7 @@ class ImagesController < ApplicationController
     redirect_to images_path
   end
 
-  def slider
+  def maps
     @images = Image.all    
   end
 

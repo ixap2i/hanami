@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 20180422110120) do
 
-  create_table "images", force: :cascade do |t|
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer "caption_id"
     t.string "image_id"
     t.string "title"
@@ -20,13 +20,6 @@ ActiveRecord::Schema.define(version: 20180422110120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "place"
-  end
-
-  create_table "reds", force: :cascade do |t|
-    t.string "filename"
-    t.binary "file"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
 end

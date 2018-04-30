@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # resources :images
 
   get "/" => "images#index"
-  get "/slider" => "images#slider"
+  get "/maps" => "images#maps"
   get "/search" => "images#search"
   get "/new" => "images#new"
   post "/new" => "images#new"

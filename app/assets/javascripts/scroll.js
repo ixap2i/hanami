@@ -10,16 +10,6 @@ function fadeIn() {
   });
 }
 
-// function slideIn() {
-//   var image = document.querySelectorAll(".img");
-//   var map = document.querySelectorAll(".map");
-//   TweenMax.staggerFrom(image, 0.5, {
-//     x: 0,
-//     delay: 1.5,
-//     opacity: 1,
-//     ease: Power4.easeIn
-//   }, 0.5);
-// }
 document.addEventListener('DOMContentLoaded', function(){
 
   fadeIn();
