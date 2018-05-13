@@ -1,0 +1,6 @@
+#slider1.slider-pro
+= @images.each do |image|
+    .sp-slides
+      /! Slide 1
+      .sp-slide
+        = attachment_image_tag image, :image, :fill, 1000, 800, format: 'png', class: "sp-image"

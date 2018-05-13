@@ -1,19 +1,16 @@
-h1
-  | Images#new
-p
-  | Find me in app/views/images/new.html.erb
-
-ul
-= form_for(@image) do |f|
-  li
-    = f.text_field :title, placeholder: "title"
-  li  
-    = f.text_field :comment, placeholder: "comment"
-  li  
-    = f.text_field :place, placeholder: "place"
-  li
-    = f.attachment_field :image
-  li
-    = f.submit "submit"
-  end
+.p-register
+  h1
+    | Images#new
+  .pure-form
+    = form_for(@image) do |f|
+      p
+        = f.text_field :title, class: "pure-input-rounded", placeholder: "title"
+      p
+        = f.text_field :comment, class: "pure-input-rounded",  placeholder: "comment"
+      p
+        = f.text_field :place, class: "pure-input-rounded",  placeholder: "place"
+      p
+        = f.attachment_field :image
+      p
+        = f.submit "submit"
 

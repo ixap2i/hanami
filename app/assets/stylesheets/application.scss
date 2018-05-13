@@ -16,21 +16,46 @@
 
 html {
   padding: 40px;
+  font-family: 'KanazawaFontMini';   
 } 
 
 body {
-  // color: white;
-  font-size: 14px;
-  font-family: 'KanazawaFontMini';   
-  
+  margin: 0;
+  overflow: hidden;
+}
+
+canvas {
+  background-image: radial-gradient(#666, #333);
+}
+
+#instructions {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  padding-bottom: 6px;
+  font-family: sans-serif;
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+canvas {
+  // width: 1000px;
+  // height: auto;
+  // margin: 0 auto;
 }
 
 main {
   font-family: 'KanazawaFontMini';   
 }
 
+.clearfix {
+  clear: both;
+  display: block;
+}
+
 .slide-wrapper {
-  display: none;
+  // display: none;
 }
 
 .scene-nav {

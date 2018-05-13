@@ -1,0 +1,25 @@
+.p-login {
+  color: #ffffff;
+  font-size: 20px;
+  width: 100%;
+  height: 100%;
+  background: image-url("bkgrd/login_bk.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  display: table;
+  margin: 0 auto;
+  position: relative;
+  .pure-form {
+    width: 200px;
+    // display: table-cell;
+    // margin: auto;
+    // vertical-align: middle;
+  }
+  .leftFormWrapper {
+    float: left;
+  }
+  .rightFormWrapper {
+    float: right;
+  }
+}
