@@ -1,0 +1,221 @@
+.slide-wrapper
+  = @images.each do |image|
+    .slide-item
+      = attachment_image_tag image, :image, :fill, 1000, 800, format: 'png', class: "slide-item__image"
+      h2.slide-item__title #{image.title}
+
+  a.scene-nav.scene-nav--prev data-nav="previous" href="#"  <<
+  a.scene-nav.scene-nav--next data-nav="next" href="#"  >>
+
+javascript: 
+    // Select all your images
+    var spriteImages = document.querySelectorAll( '.slide-item__image' ); 
+    var spriteImagesSrc = [];
+    var texts = [];
+
+    for ( var i = 0; i < spriteImages.length; i++ ) {
+
+      var img = spriteImages[i];
+      // Set the texts you want to display to each slide 
+      // in a sibling element of your image and edit accordingly
+      if ( img.nextElementSibling ) {
+        texts.push(img.nextElementSibling.innerHTML);
+      } else {
+        texts.push('');
+      }
+      spriteImagesSrc.push( img.getAttribute('src') );
+
+    }
+
+    var initCanvasSlideshow = new CanvasSlideshow({
+      sprites: spriteImagesSrc,
+      displacementImage: 'assets/img/dmaps/512x512/pointilize-ea2088772379bd293575173c13d74c063b384f044ea226d3d3592d3e620395d1.jpg',
+      displaceScale: [800, 600],
+      texts: texts,
+      textColor: "#E2DDE4",
+      textSize: "14px"
+    });
+
+
+
+
+    var renderer            = new PIXI.WebGLRenderer(1000, 800, { transparent: true });
+    //console.log(renderer.view);
+    var stage               = new PIXI.Container();
+    var slidesContainer     = new PIXI.Container();
+    var displacementImage = "assets/img/dmaps/512x512/clouds-c680cad17b74c5a9c3998364fa216fe313b2422df5f5db1262b9e9af5db973fa.jpg";
+    var displacementSprite  = new PIXI.Sprite.fromImage( displacementImage );
+    var displacementFilter  = new PIXI.filters.DisplacementFilter( displacementSprite );
+          
+    // Add canvas to the HTML
+    // var canvas = document.querySelectorAll("canvas");
+
+    //canvas.appendChild( renderer.view );
+    document.body.appendChild(renderer.view);
+
+    //loadPixiSprites( slidesContainer );
+    loadPixiSprites( spriteImagesSrc );
+
+
+    // We load the sprites to the slides container and position them at the center of the stage
+    // The sprites array is passed to our component upon its initialization
+    // If our slide has text, we add it as a child to the image and center it
+    function loadPixiSprites( sprites ) {
+      
+      for ( var i = 0; i < sprites.length; i++ ) {
+        
+        var texture = new PIXI.Texture.fromImage( sprites[i] );
+        var image   = new PIXI.Sprite( texture );
+
+        if ( texts ) {
+
+          // Base styles for our Text
+          var textStyle = new PIXI.TextStyle({
+            color: '#ffffff', 
+            font: 'bold 50px KanazawaFontMini',
+            wordWrap: true,
+            wordWrapWidth: 400
+          });
+
+          var text = new PIXI.Text( texts[i], textStyle);
+          image.addChild( text );
+
+          
+          // Center each to text to the image
+          text.anchor.set(0.5);
+          text.x = image.width / 2;
+          text.y = image.height / 2;      
+                  
+        }
+        
+        image.anchor.set(0.5);
+        image.x = renderer.width / 2;
+        image.y = renderer.height / 2;            
+
+        slidesContainer.addChild( image );
+        
+      } 
+    };
+
+
+    // Add child container to the stage
+    stage.addChild( slidesContainer );
+
+    // Set the filter to stage
+    stage.filters = [displacementFilter];        
+
+
+    // We listen at each navigation element click and call the move slider function 
+    // passing it the index we want to go to
+    var currentIndex = 0;
+    var slideImages = slidesContainer.children;
+
+    var isPlaying = false;  
+    var nav = document.querySelectorAll(".scene-nav");
+
+    for ( var i = 0; i < nav.length; i++ ) {
+      
+      var navItem = nav[i];
+
+      navItem.onclick = function( event ) {
+
+        // Make sure the previous transition has ended
+        if ( isPlaying ) {
+          return false;
+        }     
+
+        if ( this.getAttribute('data-nav') === 'next' ) {
+
+          if ( currentIndex >= 0 && currentIndex < slideImages.length - 1 ) {
+            moveSlider( currentIndex + 1 );
+          } else {
+            moveSlider( 0 );
+          }
+
+        } else {
+
+          if ( currentIndex > 0 && currentIndex < slideImages.length ) {
+            moveSlider( currentIndex - 1 );
+          } else {
+            moveSlider( spriteImages.length - 1 );
+          }            
+
+        }
+
+        return false;
+
+      }
+      
+    }
+
+
+    // Our transition between the slides
+    // On our timeline we set the alpha property of the relevant slide to 0 or 1 
+    // and scale out filter on the x & y axis accordingly
+    function moveSlider( newIndex ) {
+
+      isPlaying = true;
+
+      var baseTimeline = new TimelineMax( { onComplete: function () {
+        currentIndex = newIndex;
+        isPlaying = false;
+      }}); 
+      
+      baseTimeline
+        .to(displacementFilter.scale, 1, { x: 200, y: 200  })
+        .to(slideImages[currentIndex], 0.5, { alpha: 0 })
+        .to(slideImages[newIndex], 0.5, { alpha: 1 })  
+        .to(displacementFilter.scale, 1, { x: 20, y: 20 } );
+    };
+
+    // ここはなくてもstageはrenderされる
+    // Use Pixi's Ticker class to render our scene 
+    // similar to requestAnimationFrame
+    //var ticker = new PIXI.ticker.Ticker();
+    //ticker.add( function( delta ) {
+      
+      // Optionally have a default animation
+      //displacementSprite.x += 10 * delta;
+      //displacementSprite.y += 3 * delta;
+      
+      // Render our stage
+      //renderer.render( stage );
+
+    //});
+
+
+  // Set our container to interactive mode
+  slidesContainer.interactive = true;
+  slidesContainer.buttonMode = true;       
+
+  // Our animation
+  var rafID, mouseX, mouseY;
+
+  function rotateSpite() {
+    displacementSprite.rotation += 0.001;
+    rafID = requestAnimationFrame( rotateSpite );
+  }
+
+  slidesContainer.pointerover = function( mouseData ){
+    mouseX = mouseData.data.global.x;
+    mouseY = mouseData.data.global.y;   
+    TweenMax.to( displacementFilter.scale, 1, { x: "+=" + Math.sin( mouseX ) * 100 + "", y: "+=" + Math.cos( mouseY ) * 100 + ""  });   
+    rotateSpite();
+  }      
+              
+  slidesContainer.pointerdown = function( mouseData ){
+    mouseX = mouseData.data.global.x;
+    mouseY = mouseData.data.global.y;         
+    TweenMax.to( displacementFilter.scale, 1, { x: "+=" + Math.sin( mouseX ) * 1200 + "", y: "+=" + Math.cos( mouseY ) * 200 + ""  });   
+  }     
+
+  slidesContainer.pointerout = function( mouseData ){
+    TweenMax.to( displacementFilter.scale, 1, { x: 0, y: 0 });
+    cancelAnimationFrame( rafID );
+  }     
+
+  slidesContainer.pointerup = function( mouseData ){
+    TweenMax.to( displacementFilter.scale, 1, { x: 0, y: 0 });                      
+    cancelAnimationFrame( rafID );
+  }              
+

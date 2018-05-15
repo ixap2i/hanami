@@ -1,0 +1,16 @@
+.p-signup
+  .leftFormWrapper.clearfix
+    | 新規登録
+    = flash.now[:danger]
+    .uk-fieldset.uk-form-width-medium
+      = form_for(@user) do |f|
+        p
+          = f.text_field :name, class: "uk-input uk-form-width-medium", placeholder: "Name"
+        p
+          = f.text_field :mail, class: "uk-input uk-form-width-medium", placeholder: "Email"
+        p
+          = f.text_field :password, class: "uk-input uk-form-width-medium", placeholder: "password"
+        p
+          = f.text_field :password_confirmation, class: "uk-input uk-form-width-medium", placeholder: "password"
+        p
+          = f.submit "signup", class: "uk-button uk-button-default"

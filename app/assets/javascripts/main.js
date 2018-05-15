@@ -52,7 +52,7 @@
         wordWrap: true,
         wordWrapWidth: 400,
         letterSpacing: 20,
-        fontSize: 14
+        fontSize: 20
       });
 
       
