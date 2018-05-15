@@ -37,16 +37,22 @@ html
 
     script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.js"
     script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.min.js"
-    .uk-offcanvas-content
-      /! The whole page content goes here
-      button.uk-button.uk-button-default.uk-margin-small-right type="button" uk-toggle=("target: #offcanvas-usage")  Open
-      a href="#offcanvas-usage" uk-toggle=""  Open
-      #offcanvas-usage uk-offcanvas="" 
-        .uk-offcanvas-bar
-          button.uk-offcanvas-close type="button" uk-close="" 
-          h3 Title
-            = render "partials/sidebar"
+    .p-home
+      .uk-offcanvas-content
+        /! The whole page content goes here
+        button.uk-button.uk-button-default.uk-margin-small-right type="button" uk-toggle=("target: #offcanvas-usage")  Menu
+        a href="#offcanvas-usage" uk-toggle=""
+        #offcanvas-usage uk-offcanvas="" 
+          .uk-offcanvas-bar
+            button.uk-offcanvas-close type="button" uk-close="" 
+            = link_to "Top", "/"
+            |&nbsp;|&nbsp;
+            = link_to "Signup", new_user_path 
+            |&nbsp;|&nbsp;
+            = link_to "Login", login_path
+            |&nbsp;|&nbsp;
+            = link_to "Maps", maps_path
 
 
-      = yield
-      = yield :head if content_for?(:foot)
+        = yield
+        = yield :head if content_for?(:foot)
