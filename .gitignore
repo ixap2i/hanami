@@ -44,4 +44,7 @@ Rakefile
 .env
 node_modules
 mysql2.so
+config.ru
+config/secrests.yml
 
+#.gitignore
