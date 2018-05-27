@@ -1,5 +1,5 @@
 .slide-wrapper
-  = @images.each do |image|
+  - @images.each do |image|
     .slide-item
       = attachment_image_tag image, :image, :fill, 1000, 800, format: 'png', class: "slide-item__image"
       h2.slide-item__title #{image.title}

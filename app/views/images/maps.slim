@@ -1,8 +1,7 @@
 /! Replace the value of the key parameter with your own API key.
 script async="" defer="" src="https://maps.googleapis.com/maps/api/js?language=ja&v=3.32&key=AIzaSyCb2tcvLbFGvlgnFTNMBczhBJsataGnlzw&callback=initMap" 
 
-.m-slider
-  = @images.each do |image|
-    section
-      = attachment_image_tag image, :image, :fill, 1000, 200, format: 'png', class: "img fadeIn"
-      .map
+ul.uk-child-width.uk-text-center style="width: 200px;"
+  - @images.each do |image|
+    li
+      = attachment_image_tag image, :image, :fill, 200, 200, format: 'png', class: "img uk-card uk-card-default uk-card-body"
