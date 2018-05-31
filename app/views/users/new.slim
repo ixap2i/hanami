@@ -1,16 +1,20 @@
 .p-signup
   .leftFormWrapper.clearfix
-    | 新規登録
-    = flash.now[:danger]
+    | Signup
+  - if flash
+    - binding.pry
+    = flash[:success]
+    = flash[:danger]
+
     .uk-fieldset.uk-form-width-medium
       = form_for(@user) do |f|
-        p
+        p.uk-margin
           = f.text_field :name, class: "uk-input uk-form-width-medium", placeholder: "Name"
-        p
-          = f.text_field :mail, class: "uk-input uk-form-width-medium", placeholder: "Email"
-        p
-          = f.text_field :password, class: "uk-input uk-form-width-medium", placeholder: "password"
-        p
-          = f.text_field :password_confirmation, class: "uk-input uk-form-width-medium", placeholder: "password"
-        p
-          = f.submit "signup", class: "uk-button uk-button-default"
+        p.uk-margin
+          = f.text_field :mail, class: "uk-input uk-marginut uk-form-width-medium", placeholder: "Email"
+        p.uk-margin
+          = f.text_field :password, class: "uk-input uk-form-width-medium", placeholder: "password", type: "password"
+        p.uk-margin
+          = f.text_field :password_confirmation, class: "uk-input uk-form-width-medium", placeholder: "password", type: "password"
+        p.uk-margin
+          = f.submit "SIGNUP", class: "uk-button uk-button-default"

@@ -12,7 +12,7 @@ function fadeIn() {
 
 document.addEventListener('DOMContentLoaded', function(){
 
-  fadeIn();
+  // fadeIn();
 
   var trigger = new ScrollTrigger({
     toggle: {

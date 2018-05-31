@@ -7,7 +7,8 @@ function initMap() {
   var lng;
   var lats = [];
   var lngs = [];
-  var mapFields = document.querySelectorAll('.img');
+  // var mapFields = document.querySelectorAll('.js-thumbImg');
+  var mapFields = document.querySelectorAll('.js-mapBase');
   var mapField;
   var uluru;
   
@@ -59,7 +60,7 @@ $.ajax({
 
       uluru = {lat: parseFloat(lats[i]), lng: parseFloat(lngs[i])};
       
-      mapField = mapFields[i].nextElementSibling;
+      mapField = mapFields[i];
 
       var map = new google.maps.Map(mapField, {
         zoom: 17,
@@ -71,6 +72,9 @@ $.ajax({
       });  
     }
   }
+}
 
-  }
 
+window.onload = function() {
+  initMap();
+}

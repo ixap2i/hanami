@@ -5,7 +5,6 @@ class ImagesController < ApplicationController
   end
 
   def show
-    binding.pry
     @image = Image.find(params[:id])
   end
 

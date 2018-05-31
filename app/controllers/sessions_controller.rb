@@ -8,12 +8,20 @@ class SessionsController < ApplicationController
 
   def create
     # authenticateは認証に失敗したらfalseを返す
-    if @user.authenticate(session_params[:password])
-      # sessionをcreateして、最初のページにリダイレクト
-      sign_in(@user)
-      redirect_to root_path
+    binding.pry
+    if @user.present?
+      if @user.authenticate(session_params[:password])
+        # sessionをcreateして、最初のページにリダイレクト
+        sign_in(@user)
+        flash.now[:success] = "いらっしゃいませ!"
+        render "new"
+        binding.pry
+      else
+        flash.now[:danger] = "入力された情報に誤りがあります"
+        render :template => "sessions/new"
+      end
     else
-      flash.now[:danger] = "入力された情報に誤りがあります"
+      flash.now[:danger] = "もう一度ログインしてください"
       render "new"
     end
   end

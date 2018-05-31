@@ -1,0 +1,14 @@
+.a-title {
+  font-size: 40px;
+  font-family: 'KanazawaFontMini'; 
+  &.-right {
+    position: absolute;
+    right: 4%;
+    top: -40%;
+  }  
+  &.-left {
+    position: absolute;
+    left: 4%;
+    padding-top: 10%;
+  }  
+}

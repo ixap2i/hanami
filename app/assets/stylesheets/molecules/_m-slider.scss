@@ -14,15 +14,15 @@
       background-image: linear-gradient(to bottom,lavender 0%, aliceblue 50%, lavenderblush 100%);
     }
 
-    .fadeIn {
-      opacity: 0;
-      transform: translate(-1000px, 0);
-      &.-scrollIn {
-        opacity: 1;
-        transform: translate(0, 0); 
-        transition-duration: 1s;
-      }
-    }
+    // .fadeIn {
+    //   opacity: 0;
+    //   transform: translate(-1000px, 0);
+    //   &.-scrollIn {
+    //     opacity: 1;
+    //     transform: translate(0, 0); 
+    //     transition-duration: 1s;
+    //   }
+    // }
     .logoAnim {
       opacity: 0;
       &.-go {
@@ -31,13 +31,13 @@
       }
     }
     .map {
-      opacity: 0;
-      transform: translate(0, 200px);
-      &.-fadeIn {
-        opacity: 1;
-        transform: translate(0, 0); 
-        transition-duration: 1s;
-      }
+      opacity: 1;
+      // transform: translate(0, 200px);
+      // &.-fadeIn {
+      //   opacity: 1;
+      //   transform: translate(0, 0); 
+      //   transition-duration: 1s;
+      // }
     }
   }
 

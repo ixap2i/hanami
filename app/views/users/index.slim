@@ -1,0 +1,19 @@
+.p-home__base
+  .a-title.-right
+    | My Image
+  
+  
+  .a-title.-left
+    | Users
+  table.uk-table.uk-table-divider
+    thead
+      tr
+        th UserId
+        th Icon
+        th UserName
+    tbody
+    - @users.each do |user|
+      tr
+        td = user.id
+        td = user.name
+        td = user.name

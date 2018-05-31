@@ -1,53 +1,21 @@
 .p-login
-
-    | ログイン
-    = flash.now[:danger]
-    .pure-form.
-      = form_for(@user) do |f|
-        p
-          = f.text_field :name, class: "pure-input-rounded", placeholder: "Name"
-        p
-          = f.text_field :mail, class: "pure-input-rounded", placeholder: "Email"
-        p
-          = f.text_field :password, class: "pure-input-rounded", placeholder: "password"
-        p
-          = f.text_field :password_confirmation, class: "pure-input-rounded", placeholder: "password"
-        p
-          = f.submit "signup", class: "pure-button"
-
-/ = image_tag "login/signup_bk.jpg", name: "bk"
-javascript: 
-  /   var img = document.bk.src
-  /   var texts = [];
-  /   var textobj = new PIXI.Text("Hey",
-  /   {fontFamily: 'KanazawaFontMini',
-  /   fontSize: '40vh',
-  /   fill: '#f0f8ff'});
-  /   textobj.position.x = 30;
-  /   textobj.position.y = 30;
-  /   textobj.height = 100;
-  /   var initCanvasSlideshow = new CanvasSlideshow({
-  /     sprites: img,
-  /     displacementImage: 'assets/img/dmaps/512x512/pointilize-ea2088772379bd293575173c13d74c063b384f044ea226d3d3592d3e620395d1.jpg',
-  /     autoPlay: true,
-  /     displaceScale: [300, 300],
-  /     fullScreen: true,
-  /     texts: texts,
-  /     textColor: "#E2DDE4",
-  /     textSize: "14px",
-  /     centerSprites: true,
-  /     // wacky: true
-  /   });
-
-
-
-  /  var renderer            = new PIXI.WebGLRenderer(1000, 800, { transparent: true });
-  /   var stage               = new PIXI.Container();
-  /   var slidesContainer     = new PIXI.Container();
-  /   var displacementImage = "assets/img/dmaps/512x512/clouds-c680cad17b74c5a9c3998364fa216fe313b2422df5f5db1262b9e9af5db973fa.jpg";
-  /   var displacementSprite  = new PIXI.Sprite.fromImage( displacementImage );
-  /   var displacementFilter  = new PIXI.filters.DisplacementFilter( displacementSprite );
-          
-  /   // Add canvas to the HTML
-  /   document.body.appendChild( renderer.view );
+  | * Login
+  - if flash
+    = flash[:success]
+    = flash[:danger]
+  - elsif @current_user
+    | #{@current_user.name}
+  .pure-form
+    = form_for :session, url: login_path do |f|
+      / = form_for(@user, url: login_path) do |f|
+      p
+        = f.text_field :name, class: "uk-input uk-form-width-medium", placeholder: "Name"
+      p
+        = f.text_field :mail, class: "uk-input uk-form-width-medium",placeholder: "Email"
+      p
+        = f.text_field :password, class: "uk-input uk-form-width-medium", placeholder: "password", type: "password"
+      p
+        = f.text_field :password_confirmation, class: "uk-input uk-form-width-medium", placeholder: "password", type: "password"
+      p
+        = f.submit "LOGIN", class: "uk-button uk-button-default"
 

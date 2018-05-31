@@ -1,16 +1,16 @@
 .p-register
   h1
     | Images#new
-  .pure-form
+  .js-upload.uk-form-custom
     = form_for(@image) do |f|
-      p
+      p.uk-margin
         = f.text_field :title, class: "pure-input-rounded", placeholder: "title"
-      p
+      p.uk-margin
         = f.text_field :comment, class: "pure-input-rounded",  placeholder: "comment"
-      p
+      p.uk-margin
         = f.text_field :place, class: "pure-input-rounded",  placeholder: "place"
-      p
-        = f.attachment_field :image
-      p
-        = f.submit "submit"
+      p.uk-margin
+        = f.attachment_field :image, class: "uk-button uk-button-default", type: "file"
+      p.uk-margin
+        = f.submit "submit", class: "uk-button uk-button-default" 
 

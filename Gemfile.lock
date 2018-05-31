@@ -270,7 +270,7 @@ DEPENDENCIES
   jbuilder (= 2.7.0)
   jquery-rails (= 4.3.1)
   listen (>= 3.0.5, < 3.2)
-  mysql2 (~> 0.3.18)
+  mysql2 (~> 0.3.20)
   pry
   pry-nav
   puma (~> 3.7)
