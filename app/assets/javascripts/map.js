@@ -63,7 +63,7 @@ $.ajax({
       mapField = mapFields[i];
 
       var map = new google.maps.Map(mapField, {
-        zoom: 17,
+        zoom: 24,
         center: uluru
       });
       var marker = new google.maps.Marker({
@@ -78,3 +78,4 @@ $.ajax({
 window.onload = function() {
   initMap();
 }
+

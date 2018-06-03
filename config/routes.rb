@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root to: "rooms#show"
+
   # resources :images
 
   get "/" => "images#index"
@@ -17,4 +19,7 @@ Rails.application.routes.draw do
 
   resources :images
   resources :users
+
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
 end

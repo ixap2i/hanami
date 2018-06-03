@@ -5,6 +5,7 @@ html
       | Hanami
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = action_cable_meta_tag
     = yield :head if content_for?(:head)
     = csrf_meta_tags
     meta charset="UTF-8"
@@ -35,8 +36,6 @@ html
     script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/jquery.gsap.min.js" 
     script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/PixiPlugin.min.js" 
 
-    script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.js"
-    script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollTrigger/0.3.6/ScrollTrigger.min.js"
     .p-home
       .uk-offcanvas-content
         /! The whole page content goes here

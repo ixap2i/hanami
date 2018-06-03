@@ -68,4 +68,8 @@ Rails.application.configure do
   config.assets.precompile += [/^[a-z0-9]\w+.(css|js|woff|eot|svg|ttf|otf)$/]
 
   config.serve_static_files = true
+
+  # allow from all to websocket
+  ActionCable.server.config.disable_request_forgery_protection = true
+  config.action_cable.allowed_request_origins = ['http://localhost:3000/']
 end
