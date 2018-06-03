@@ -20,3 +20,5 @@ Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javasctipts")
 Rails.application.config.assets.paths << Rails.root.join("app", "assets", "javasctipts", "js")
 Rails.application.config.assets.paths << Rails.root.join('node_modules')
+
+Rails.application.config.assets.precompile << 'room.js'

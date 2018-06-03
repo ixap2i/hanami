@@ -71,5 +71,6 @@ Rails.application.configure do
 
   # allow from all to websocket
   ActionCable.server.config.disable_request_forgery_protection = true
-  config.action_cable.allowed_request_origins = ['http://localhost:3000/']
+  config.action_cable.allowed_request_origins = ['localhost:3000']
+  # config.action_cable.allowed_request_origins = ['http://127.0.0.1:3000/']
 end

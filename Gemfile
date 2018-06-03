@@ -7,7 +7,8 @@ end
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.1.1'
+# gem 'rails', '5.1.1'
+gem 'rails', '>= 5.0.0.beta1', '< 5.1'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -24,10 +25,13 @@ gem 'therubyracer', platforms: :ruby
 gem 'coffee-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '2.7.0'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 4.0'
+gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -45,7 +49,7 @@ end
 # use mariaDB
 gem 'mysql2', '~> 0.4.4'
 # gem 'mysql'
-
+gem 'faye-websocket', '0.10.0'
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
@@ -67,12 +71,12 @@ gem "jquery-rails", "4.3.1"
 gem "refile", github: 'refile/refile', require: "refile/rails"
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
-gem "actionpack", "5.1.1"
-gem "activemodel", "5.1.1"
-gem "activesupport", "5.1.1"
+# gem "actionpack", "5.1.1"
+# gem "activemodel", "5.1.1"
+# gem "activesupport", "5.1.1"
 
 
-gem "railties", "5.1.1"
+# gem "railties", "5.1.1"
 
 # debug
 gem "pry"

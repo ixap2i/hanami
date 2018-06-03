@@ -1,5 +1,9 @@
 .m-wrap {
   &.-thumbWrap {
     margin: 0 auto;
+    .__photolist {
+      width: 70%;
+      margin: 0 auto;
+    }
   }
 }

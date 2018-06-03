@@ -1,5 +1,7 @@
 class RoomsController < ApplicationController
   def show
-    ChatChannel.broadcast_to('message', 'hello')
+    # ActionCable.server.broadcast('chat_channel', @room.message)
+    # ChatChannel.broadcast_to('message', 'hello')
+    @messages = Message.all
   end
 end

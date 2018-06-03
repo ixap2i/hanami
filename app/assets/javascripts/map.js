@@ -24,7 +24,7 @@ $.ajax({
     success: function(data){
       for(var i = 0; i < data.length; i++) {
         placeName = data[i];
-        placeUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+placeName+"&key=AIzaSyCb2tcvLbFGvlgnFTNMBczhBJsataGnlzw";
+        placeUrl = "https://maps.googleapis.com/maps/api/geocode/json?address="+placeName+"&key=AIzaSyAZZML3SeKi563dCbkkVCQcZw6seG4JAJ0";
         places.push(placeUrl); 
       } 
       getPosition(places);      
