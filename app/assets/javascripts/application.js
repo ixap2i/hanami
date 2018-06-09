@@ -24,3 +24,7 @@
 //= require Detector.js
 //= require stats.min.js
 //= require_tree .
+//= require jquery
+//= require jquery_ujs
+//= require websocket_rails/main
+

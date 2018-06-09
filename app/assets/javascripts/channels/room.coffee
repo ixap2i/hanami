@@ -1,18 +1,25 @@
-App.cable.subscriptions.create "RoomChannel",
-  connected: ->
-    # Called when the subscription is ready for use on the server
+  App.room = App.cable.subscriptions.create "RoomChannel",
+    connected: ->
+      # Called when the subscription is ready for use on the server
 
-  disconnected: ->
-    # Called when the subscription has been terminated by the server
+    disconnected: ->
+      # alert "orx"
 
-  received: (data) ->
-    $('#messages').append data['message']
+      # Called when the subscription has been terminated by the server
 
-  speak: (message) ->
-    @perform 'speak', message: message
+    received: (data) ->
+      alert data
 
-$(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
-  if event.keyCode is 13 # return = send
-    App.room.speak event.target.value
-    event.target.value = ''
-    event.preventDefault()
+      @perform 'speak', message: message
+
+      $('#messages').append data['message']
+      # alert(data)
+
+    speak: (message) ->
+      @perform 'speak', message: message
+
+  $(document).on 'keypress', '[data-behavior~=room_speaker]', (event) ->
+    if event.keyCode is 13 # return = send
+      App.room.speak event.target.value
+      event.target.value = ''
+      event.preventDefault()

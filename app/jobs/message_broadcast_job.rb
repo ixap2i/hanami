@@ -1,14 +1,15 @@
 class MessageBroadcastJob < ApplicationJob
+  queue_as :default
+  
   def perform(message)
-    ActionCable.server.broadcast 'chat_channel', message: render_message(message)
+    RoomChannel.broadcast_to(message: render_message(message))
+    binding.pry
+    ActionCable.server.broadcast 'room_channel', message: render_message(message), locals: { message: message })
   end
 
-  def notification
-    # Somewhere in your app this is called, perhaps from a NewCommentJob
-    ActionCable.server.broadcast "web_notifications_#{current_user.id}", { title: 'New things!', body: 'All the news that is fit to print' }
-  end
+
   private
     def render_message(message)
-      ApplicationController.renderer.render(partial: 'rooms/messages', locals: { message: message })
+      ApplicationController.renderer.render(partial: 'messages/message', locals: { message: message })
     end
 end

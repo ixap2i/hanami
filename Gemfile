@@ -8,7 +8,7 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 # gem 'rails', '5.1.1'
-gem 'rails', '>= 5.0.0.beta1', '< 5.1'
+gem 'rails', '~> 5.1'
 
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
@@ -25,13 +25,10 @@ gem 'therubyracer', platforms: :ruby
 gem 'coffee-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
-gem 'jquery-turbolinks'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '2.7.0'
 # Use Redis adapter to run Action Cable in production
-gem 'redis', '~> 3.0'
+gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
@@ -49,13 +46,13 @@ end
 # use mariaDB
 gem 'mysql2', '~> 0.4.4'
 # gem 'mysql'
-gem 'faye-websocket', '0.10.0'
+
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'listen', '>= 3.0.5', '< 3.2'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  # gem 'spring', '1.7.1'
+  gem 'spring', '1.7.1'
   # gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
@@ -89,8 +86,11 @@ gem 'hirb-unicode'
 # .env
 gem 'dotenv-rails'
 
+gem 'execjs'
 # for font-face
-group :staging, :production do
+group :staging, :production, :development do
   gem 'rails_12factor'
 
+gem "websocket-rails"
+gem 'faye-websocket', '~>0.10.0'
 end

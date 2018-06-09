@@ -1,13 +1,13 @@
-development: &development
-  # adapter: async
-  adapter: redis
-  url: redis://localhost:6379/
-  channel_prefix: hanami_development
-
-test:
-  adapter: async
-
-production:
-  adapter: redis
-  url: redis://localhost:6379/3
-  channel_prefix: hanami_production
+production: &production
+  :url: redis://localhost:6379
+  :host: localhost
+  :port: 6379
+  :timeout: 1
+local: &local
+  :url: redis://localhost:6379
+  :host: localhost
+  :port: 6379
+  :timeout: 1
+  :inline: true
+development: *local
+test: *local
