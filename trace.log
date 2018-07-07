@@ -1,0 +1,68 @@
+== Info:   Trying 52.70.218.113...
+== Info: TCP_NODELAY set
+== Info: Connected to challenge-your-limits.herokuapp.com (52.70.218.113) port 80 (#0)
+=> Send header, 106 bytes (0x6a)
+0000: 47 45 54 20 2f 63 61 6c 6c 2f 6d 65 20 48 54 54 GET /call/me HTT
+0010: 50 2f 31 2e 31 0d 0a 48 6f 73 74 3a 20 63 68 61 P/1.1..Host: cha
+0020: 6c 6c 65 6e 67 65 2d 79 6f 75 72 2d 6c 69 6d 69 llenge-your-limi
+0030: 74 73 2e 68 65 72 6f 6b 75 61 70 70 2e 63 6f 6d ts.herokuapp.com
+0040: 0d 0a 55 73 65 72 2d 41 67 65 6e 74 3a 20 63 75 ..User-Agent: cu
+0050: 72 6c 2f 37 2e 35 34 2e 30 0d 0a 41 63 63 65 70 rl/7.54.0..Accep
+0060: 74 3a 20 2a 2f 2a 0d 0a 0d 0a                   t: */*....
+<= Recv header, 17 bytes (0x11)
+0000: 48 54 54 50 2f 31 2e 31 20 32 30 30 20 4f 4b 0d HTTP/1.1 200 OK.
+0010: 0a                                              .
+<= Recv header, 16 bytes (0x10)
+0000: 53 65 72 76 65 72 3a 20 43 6f 77 62 6f 79 0d 0a Server: Cowboy..
+<= Recv header, 37 bytes (0x25)
+0000: 44 61 74 65 3a 20 4d 6f 6e 2c 20 31 31 20 4a 75 Date: Mon, 11 Ju
+0010: 6e 20 32 30 31 38 20 31 35 3a 30 30 3a 33 30 20 n 2018 15:00:30 
+0020: 47 4d 54 0d 0a                                  GMT..
+<= Recv header, 24 bytes (0x18)
+0000: 43 6f 6e 6e 65 63 74 69 6f 6e 3a 20 6b 65 65 70 Connection: keep
+0010: 2d 61 6c 69 76 65 0d 0a                         -alive..
+<= Recv header, 29 bytes (0x1d)
+0000: 58 2d 46 72 61 6d 65 2d 4f 70 74 69 6f 6e 73 3a X-Frame-Options:
+0010: 20 53 41 4d 45 4f 52 49 47 49 4e 0d 0a           SAMEORIGIN..
+<= Recv header, 33 bytes (0x21)
+0000: 58 2d 58 73 73 2d 50 72 6f 74 65 63 74 69 6f 6e X-Xss-Protection
+0010: 3a 20 31 3b 20 6d 6f 64 65 3d 62 6c 6f 63 6b 0d : 1; mode=block.
+0020: 0a                                              .
+<= Recv header, 33 bytes (0x21)
+0000: 58 2d 43 6f 6e 74 65 6e 74 2d 54 79 70 65 2d 4f X-Content-Type-O
+0010: 70 74 69 6f 6e 73 3a 20 6e 6f 73 6e 69 66 66 0d ptions: nosniff.
+0020: 0a                                              .
+<= Recv header, 47 bytes (0x2f)
+0000: 43 6f 6e 74 65 6e 74 2d 54 79 70 65 3a 20 61 70 Content-Type: ap
+0010: 70 6c 69 63 61 74 69 6f 6e 2f 6a 73 6f 6e 3b 20 plication/json; 
+0020: 63 68 61 72 73 65 74 3d 75 74 66 2d 38 0d 0a    charset=utf-8..
+<= Recv header, 44 bytes (0x2c)
+0000: 45 74 61 67 3a 20 57 2f 22 31 31 39 39 31 36 39 Etag: W/"1199169
+0010: 62 39 62 36 35 38 61 62 64 61 62 33 30 33 31 31 b9b658abdab30311
+0020: 36 63 37 36 64 64 37 38 61 22 0d 0a             6c76dd78a"..
+<= Recv header, 52 bytes (0x34)
+0000: 43 61 63 68 65 2d 43 6f 6e 74 72 6f 6c 3a 20 6d Cache-Control: m
+0010: 61 78 2d 61 67 65 3d 30 2c 20 70 72 69 76 61 74 ax-age=0, privat
+0020: 65 2c 20 6d 75 73 74 2d 72 65 76 61 6c 69 64 61 e, must-revalida
+0030: 74 65 0d 0a                                     te..
+<= Recv header, 52 bytes (0x34)
+0000: 58 2d 52 65 71 75 65 73 74 2d 49 64 3a 20 65 63 X-Request-Id: ec
+0010: 62 36 63 37 39 34 2d 31 36 32 38 2d 34 33 63 38 b6c794-1628-43c8
+0020: 2d 62 31 35 35 2d 39 31 63 62 38 61 35 37 34 34 -b155-91cb8a5744
+0030: 63 30 0d 0a                                     c0..
+<= Recv header, 21 bytes (0x15)
+0000: 58 2d 52 75 6e 74 69 6d 65 3a 20 30 2e 30 30 31 X-Runtime: 0.001
+0010: 38 35 35 0d 0a                                  855..
+<= Recv header, 28 bytes (0x1c)
+0000: 54 72 61 6e 73 66 65 72 2d 45 6e 63 6f 64 69 6e Transfer-Encodin
+0010: 67 3a 20 63 68 75 6e 6b 65 64 0d 0a             g: chunked..
+<= Recv header, 16 bytes (0x10)
+0000: 56 69 61 3a 20 31 2e 31 20 76 65 67 75 72 0d 0a Via: 1.1 vegur..
+<= Recv header, 2 bytes (0x2)
+0000: 0d 0a                                           ..
+<= Recv data, 59 bytes (0x3b)
+0000: 33 30 0d 0a 7b 22 6d 65 73 73 61 67 65 22 3a 22 30..{"message":"
+0010: 41 6c 6d 6f 73 74 21 20 49 74 27 73 20 6e 6f 74 Almost! It's not
+0020: 20 47 45 54 2e 20 4b 65 65 70 20 74 72 79 69 6e  GET. Keep tryin
+0030: 67 2e 22 7d 0d 0a 30 0d 0a 0d 0a                g."}..0....
+== Info: Connection #0 to host challenge-your-limits.herokuapp.com left intact

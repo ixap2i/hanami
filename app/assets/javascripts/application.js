@@ -17,7 +17,6 @@
 //= require TweenMax.min.js
 //= require imagesloaded.pkgd.min.js
 //= require main.js
-//= require map.js
 //= require three.min.js
 //= require three.js
 //= require OrbitControls.js

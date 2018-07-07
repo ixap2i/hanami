@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: "rooms#show"
+  # root to: "rooms#show"
 
   # resources :images
 

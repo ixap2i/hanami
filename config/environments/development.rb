@@ -53,7 +53,7 @@ Hanami::Application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.cache_classes = false
-  config.reload_classes_only_on_change = false
+  config.reload_classes_only_on_change = true
 
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
@@ -72,7 +72,6 @@ Hanami::Application.configure do
   # allow from all to websocket
   ActionCable.server.config.disable_request_forgery_protection = true
 
-  config.action_cable.allowed_request_origins = ['http://localhost:3000/', %r{http://localhost*}]
+  config.action_cable.allowed_request_origins = [ /http:\/\/.*/ ]
   config.action_cable.url = 'ws://localhost:3000'
-  # config.action_cable.allowed_request_origins = ['http://127.0.0.1:3000/']
 end

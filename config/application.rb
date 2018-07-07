@@ -24,6 +24,15 @@ module Hanami
     # Do not generate asset files
     config.generators do |g|
       g.assets false
+      g.test_framework :rspec,
+        # モデル作成時にfixture(DB用のテストデータを一定に保つ仕組み)の作成を有効化
+        fixtures: true,
+        view_specs: false,
+        routing_specs: false,
+        controller_specs: false,
+        request_specs: true
+      # fixtureの代わりにfactory_girlを使うようにする
+      g.fixture_replacement :factory_girl, dis: 'spec/factories'
     end
   end
 end
