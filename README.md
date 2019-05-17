@@ -1,3 +1,10 @@
+# hanami
+
+個人用ホームページです。herokuで建てたものがこちらです。https://envelope72.herokuapp.com/
+写真を使用した個人ホームページをイメージして作りました。
+
+FakerやActionMailerを勉強する素地になったリポジトリです。
+
 # README
 
 This README would normally document whatever steps are necessary to get the
