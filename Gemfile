@@ -95,5 +95,5 @@ group :staging, :production, :development do
   gem 'rails_12factor'
 
 gem "websocket-rails"
-gem 'faye-websocket', '~>0.10.0'
+gem 'faye-websocket', '~>0.11.0'
 end
